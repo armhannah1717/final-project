@@ -1,0 +1,6 @@
+services:
+  website:
+    build: .
+    container_name: final-project-DevOps
+    ports:
+      - "8090:80"
