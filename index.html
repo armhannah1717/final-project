@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Docker Live Update Test</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+
+    <!-- LEFT -->
+    <div class="left-header">
+        <img src="images/logo.png" class="logo">
+
+        <nav class="nav">
+            <a href="index.html" active="active">សតិអ</a>
+            <a href="kid.html" >បែកគំនិត</a>
+            <a href="women.html" >នឹងមែនឆ្នាំទី៤?</a> 
+            <a href="men.html">ថ្នាំ</a>
+        </nav>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="right-header">
+        <input type="text" id="search" placeholder="Search clothes...">
+        <a href="cart.html" class="cart-icon">🛒</a>
+    </div>
+
+</header>
+
+<!-- BANNER -->
+<section class="banner">
+    <button class="arrow left" onclick="prevSlide()">❮</button>
+
+    <div class="slides" id="slides">
+        <img src="images/Discount Banner/1st Banner.png">
+        <img src="images/Discount Banner/2nd Banner.png">
+        <img src="images/Discount Banner/3rd Banner.png">
+        <img src="images/Discount Banner/1st Banner.png">
+    </div>
+    <button class="arrow right"onclick="nextSlide()">❯</button>
+</section>
+
+<!-- POPUP -->
+<div class="popup" id="popup">
+    <div class="popup-box">
+
+        <span class="close-btn" onclick="closePopup()">✖</span>
+
+        <img id="popup-img" src="">
+        <h3 id="popup-name"></h3>
+        <p id="popup-price"></p>
+
+        <h4>Select Size</h4>
+
+        <div class="sizes">
+            <span onclick="chooseSize(this)">XS</span>
+            <span onclick="chooseSize(this)">S</span>
+            <span onclick="chooseSize(this)">M</span>
+            <span onclick="chooseSize(this)">L</span>
+            <span onclick="chooseSize(this)">XL</span>
+        </div>
+
+        <button onclick="confirmCart()">OK</button>
+
+    </div>
+</div>
+
+
+
+
+<!-- MAIN PRODUCTS -->
+
+<section class="products" id="product-list">
+
+    <!--1st Image-->
+    <div class="product" data-name="T-Shirt" data-price="15">
+        <img src="images/Discount Items/1. Discount.png">
+        <h3>Discount T-Shirts</h3>
+        <p>
+          <span class="old-price">$30</span>
+          <span class="new-price">$15</span>
+        </p>
+
+        <button class="add-cart" onclick="openPopup('T-Shirt',15,'images/Discount Items/1. Discount.png')">Add to Cart</button>
+         
+    </div>
+
+    <!--2nd Image-->
+
+      <div class="product" data-name="T-Shirt" data-price="15">
+        <img src="images/Discount Items/2. Discount.png">
+        <h3>Discount T-Shirts</h3>
+        <p>
+          <span class="old-price">$30</span>
+          <span class="new-price">$15</span>
+        </p>
+
+        <button class="add-cart" onclick="openPopup('T-Shirt',15,'images/Discount Items/2. Discount.png')">Add to Cart</button>
+         
+    </div>
+
+    <!--3rd Image-->
+
+    
+
+      <div class="product" data-name="Skirt" data-price="25">
+        <img src="images/Discount Items/3. Discount.png">
+        <h3>Discount Skirt</h3>
+        <p>
+          <span class="old-price">$25</span>
+          <span class="new-price">$18</span>
+        </p>
+
+        <button class="add-cart" onclick="openPopup('Skirt',18,'images/Discount Items/3. Discount.png')">Add to Cart</button>
+         
+    </div>
+
+    <!--4th Image-->
+     <div class="product" data-name="Kid-Jacket" data-price="40">
+        <img src="images/Discount Items/4. Discount.png">
+        <h3>Discount Kid-Jacket</h3>
+        <p>
+          <span class="old-price">$40</span>
+          <span class="new-price">$20</span>
+        </p>
+
+        <button class="add-cart" onclick="openPopup('Kid-Jacket',20,'images/Discount Items/4. Discount.png')">Add to Cart</button>
+         
+    </div>
+ 
+    <!--5th Image-->
+      <div class="product" data-name="Kid-Jacket" data-price="40">
+        <img src="images/Discount Items/5. Discount.png">
+        <h3>Discount Kid-Jacket</h3>
+        <p>
+          <span class="old-price">$40</span>
+          <span class="new-price">$10</span>
+        </p>
+
+        <button class="add-cart" onclick="openPopup('Kid-Jacket',10,'images/Discount Items/5. Discount.png')">Add to Cart</button>
+         
+    </div>
+
+     <!--6th Image-->
+    
+<div class="product" data-name="Kid-Jacket" data-price="15">
+        <img src="images/Discount Items/6. Discount.png">
+        <h3>Discount Kid-Jacket</h3>
+        <p>
+          <span class="old-price">$15</span>
+          <span class="new-price">$6.5</span>
+        </p>
+
+        <button class="add-cart" onclick="openPopup('Kid-Jacket',6.5,'images/Discount Items/6. Discount.png')">Add to Cart</button>
+         
+    </div>
+     <!--7th Image-->
+    
+<div class="product" data-name="T-Shirt" data-price="15">
+        <img src="images/Discount Items/7. Discount.png">
+        <h3>Discount T-Shirt</h3>
+        <p>
+          <span class="old-price">$15</span>
+          <span class="new-price">$6.5</span>
+        </p>
+
+        <button class="add-cart" onclick="openPopup('T-Shirt',6.5,'images/Discount Items/7. Discount.png')">Add to Cart</button>
+         
+    </div>
+     <!--8th Image-->
+    
+<div class="product" data-name="T-Shirt" data-price="15">
+        <img src="images/Discount Items/8. Discount.png">
+        <h3>Discount T-Shirt</h3>
+        <p>
+          <span class="old-price">$15</span>
+          <span class="new-price">$6.5</span>
+        </p>
+
+        <button class="add-cart" onclick="openPopup('T-Shirt',6.5,'images/Discount Items/8. Discount.png')">Add to Cart</button>
+         
+    </div>
+     <!--9th Image-->
+    
+<div class="product" data-name="T-Shirt" data-price="15">
+        <img src="images/Discount Items/9. Discount.png">
+        <h3>Discount T-Shirt</h3>
+        <p>
+          <span class="old-price">$15</span>
+          <span class="new-price">$6.5</span>
+        </p>
+
+        <button class="add-cart" onclick="openPopup('T-Shirt',6.5,'images/Discount Items/9. Discount.png')">Add to Cart</button>
+         
+    </div>
+     <!--10th Image-->
+    <div class="product" data-name="T-Shirt" data-price="15">
+        <img src="images/Discount Items/10.Discount.png">
+        <h3>Discount T-Shirt</h3>
+        <p>
+          <span class="old-price">$15</span>
+          <span class="new-price">$6.5</span>
+        </p>
+
+        <button class="add-cart" onclick="openPopup('T-Shirt',6.5,'images/Discount Items/10.Discount.png')">Add to Cart</button>
+         
+    </div>
+
+     <!--11th Image-->
+      <div class="product" data-name="T-Shirt" data-price="15">
+        <img src="images/Discount Items/1. Discount.png">
+        <h3>Discount T-Shirts</h3>
+        <p>
+          <span class="old-price">$30</span>
+          <span class="new-price">$15</span>
+        </p>
+
+        <button class="add-cart" onclick="openPopup('T-Shirt',15,'images/Discount Items/1. Discount.png')">Add to Cart</button>
+         
+    </div>
+
+    <!--12th Image-->
+
+      <div class="product" data-name="T-Shirt" data-price="15">
+        <img src="images/Discount Items/2. Discount.png">
+        <h3>Discount T-Shirts</h3>
+        <p>
+          <span class="old-price">$30</span>
+          <span class="new-price">$15</span>
+        </p>
+
+        <button class="add-cart" onclick="openPopup('T-Shirt',15,'images/Discount Items/2. Discount.png')">Add to Cart</button>
+         
+    </div>
+
+    <!--13th Image-->
+
+    
+
+      <div class="product" data-name="Skirt" data-price="25">
+        <img src="images/Discount Items/3. Discount.png">
+        <h3>Discount Skirt</h3>
+        <p>
+          <span class="old-price">$25</span>
+          <span class="new-price">$18</span>
+        </p>
+
+        <button class="add-cart" onclick="openPopup('Skirt',18,'images/Discount Items/3. Discount.png')">Add to Cart</button>
+         
+    </div>
+
+    <!--14th Image-->
+     <div class="product" data-name="Kid-Jacket" data-price="40">
+        <img src="images/Discount Items/4. Discount.png">
+        <h3>Discount Kid-Jacket</h3>
+        <p>
+          <span class="old-price">$40</span>
+          <span class="new-price">$20</span>
+        </p>
+
+        <button class="add-cart" onclick="openPopup('Kid-Jacket',20,'images/Discount Items/4. Discount.png')">Add to Cart</button>
+         
+    </div>
+ 
+    <!--15th Image-->
+      <div class="product" data-name="Kid-Jacket" data-price="40">
+        <img src="images/Discount Items/5. Discount.png">
+        <h3>Discount Kid-Jacket</h3>
+        <p>
+          <span class="old-price">$40</span>
+          <span class="new-price">$10</span>
+        </p>
+
+        <button class="add-cart" onclick="openPopup('Kid-Jacket',10,'images/Discount Items/5. Discount.png')">Add to Cart</button>
+         
+    </div>
+
+     <!--16th Image-->
+    
+<div class="product" data-name="Kid-Jacket" data-price="15">
+        <img src="images/Discount Items/6. Discount.png">
+        <h3>Discount Kid-Jacket</h3>
+        <p>
+          <span class="old-price">$15</span>
+          <span class="new-price">$6.5</span>
+        </p>
+
+        <button class="add-cart" onclick="openPopup('Kid-Jacket',6.5,'images/Discount Items/6. Discount.png')">Add to Cart</button>
+         
+    </div>
+     <!--17th Image-->
+    
+<div class="product" data-name="T-Shirt" data-price="15">
+        <img src="images/Discount Items/7. Discount.png">
+        <h3>Discount T-Shirt</h3>
+        <p>
+          <span class="old-price">$15</span>
+          <span class="new-price">$6.5</span>
+        </p>
+
+        <button class="add-cart" onclick="openPopup('T-Shirt',6.5,'images/Discount Items/7. Discount.png')">Add to Cart</button>
+         
+    </div>
+     <!--18th Image-->
+    
+<div class="product" data-name="T-Shirt" data-price="15">
+        <img src="images/Discount Items/8. Discount.png">
+        <h3>Discount T-Shirt</h3>
+        <p>
+          <span class="old-price">$15</span>
+          <span class="new-price">$6.5</span>
+        </p>
+
+        <button class="add-cart" onclick="openPopup('T-Shirt',6.5,'images/Discount Items/8. Discount.png')">Add to Cart</button>
+         
+    </div>
+     <!--19th Image-->
+    
+<div class="product" data-name="T-Shirt" data-price="15">
+        <img src="images/Discount Items/9. Discount.png">
+        <h3>Discount T-Shirt</h3>
+        <p>
+          <span class="old-price">$15</span>
+          <span class="new-price">$6.5</span>
+        </p>
+
+        <button class="add-cart" onclick="openPopup('T-Shirt',6.5,'images/Discount Items/9. Discount.png')">Add to Cart</button>
+         
+    </div>
+     <!--20th Image-->
+    <div class="product" data-name="T-Shirt" data-price="15">
+        <img src="images/Discount Items/10.Discount.png">
+        <h3>Discount T-Shirt</h3>
+        <p>
+          <span class="old-price">$15</span>
+          <span class="new-price">$6.5</span>
+        </p>
+
+        <button class="add-cart" onclick="openPopup('T-Shirt',6.5,'images/Discount Items/10.Discount.png')">Add to Cart</button>
+         
+    </div>
+ 
+    
+
+</section>
+<!--When product does not exit-->
+
+<p id="no-result" style="display:none; text-align:center; margin-top:20px; font-size:13px; color:#555;">
+    The item does not exist
+</p>
+    
+
+
+<!-- DISCOUNT SECTION -->
+<section id="discount-section" style="display:none; padding:30px;">
+    <h2>More Discount Items</h2>
+
+    <div class="products">
+        <div class="product">
+            <img src="images/Jackets/2.jpg">
+            <h3>Extra Jacket</h3>
+            <p>$30</p>
+        </div>
+
+        <div class="product">
+            <img src="images/Jackets/3.jpg">
+            <h3>Winter Jacket</h3>
+            <p>$28</p>
+        </div>
+    </div>
+
+    <button onclick="goBack()">⬅ Back</button>
+</section>
+
+<!-- CART -->
+<section class="cart">
+    <h2>Shopping Cart</h2>
+
+    <ul id="cart-items"></ul>
+
+    <h3>Total: $<span id="total">0</span></h3>
+
+    
+
+    <!-- Bottom Cart Button -->
+    <div class="bottom-cart-box">
+        <a href="cart.html" class="bottom-cart-btn">
+            🛒 View Full Cart
+        </a>
+    </div>
+</section>
+
+<script src="script.js"></script>
+
+
+
+
+
+
+<!--Footer-->
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <!-- Brand -->
+        <div class="footer-section">
+            <h2>Velora</h2>
+            <p>Style that defines you. Shop the latest fashion trends.<br><b>Since 2004</b></br></p>
+        </div>
+
+        <!-- Links -->
+        <div class="footer-section">
+            <h3>Shop</h3>
+            <a href="index.html">Home</a>
+            <a href="kid.html">Kid</a>
+            <a href="women's.html">Women</a>
+            <a href="men's.html">Men</a>
+        </div>
+
+        <!-- Help -->
+        <div class="footer-section">
+            <h3>Help</h3>
+            <a href="#">Contact</a>
+            <a href="#">0888506650</a>
+            <a href="#">0978272521</a>
+        </div>
+
+        <!-- Social -->
+        <div class="footer-section">
+            <h3>Follow Us</h3>
+            <p>Facebook | Instagram | TikTok</p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 Velora Shop. All rights reserved.</p>
+    </div>
+
+</footer>
+
+</body>
+
+</html>

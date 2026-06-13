@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Velora Payment</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+    <h2 class="header-title">Payment</h2>
+</header>
+
+<div class="payment-wrapper">
+
+    <!-- PAYMENT BOX -->
+    <div class="payment-box" id="payment-box">
+
+        <a href="#" class="back-btn-page" onclick="history.back()">⬅ Back</a>
+
+        <h1>Complete Your Order</h1>
+
+        <input type="text" id="fullname" placeholder="Full Name">
+        <input type="text" id="phone" placeholder="Phone Number">
+        <input type="text" id="address" placeholder="Address">
+
+        <select id="bank">
+            <option>ABA Bank</option>
+            <option>ACLEDA Bank</option>
+            <option>Wing Bank</option>
+            <option>TrueMoney</option>
+        </select>
+
+        <!-- ORDER LIST -->
+        <div id="order-list"></div>
+
+        <h2>Total: $<span id="grand-total">0</span></h2>
+
+        <button class="pay-btn" onclick="makePayment()">Pay Now</button>
+
+    </div>
+
+    <!-- SUCCESS BOX -->
+    <div class="success-box" id="success-box">
+        <h1>✔ Payment Successful</h1>
+        <p>Thank you for shopping with us.</p>
+        <h2>Velora Shop</h2>
+
+        <a href="index.html" class="back-home">Back Home</a>
+    </div>
+
+</div>
+
+<script src="payment.js"></script>
+
+</body>
+</html>

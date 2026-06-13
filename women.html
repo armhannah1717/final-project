@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Velora Shop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+    <!-- Logo only -->
+     <div class="left-header">
+        <img src="images/logo.png" alt="Velora Logo" class="logo">
+
+        <nav class="nav">
+            <a href="index.html">Home</a>
+            <a href="kid.html">Kid's</a>
+            <a href="women.html" class="active">Women's</a>
+            <a href="men.html">Men's</a>
+        </nav>
+    </div>
+
+    <!-- Right side (search bar) -->
+       <div class="right-header">
+        <input type="text" id="search" placeholder="Search clothes...">
+        <a href="cart.html" class="cart-icon">🛒</a>
+    </div>
+
+</header>
+
+
+<div class="popup" id="popup">
+    <div class="popup-box">
+
+        <span class="close-btn" onclick="closePopup()">✖</span>
+
+        <img id="popup-img" src="">
+        <h3 id="popup-name"></h3>
+        <p id="popup-price"></p>
+
+        <h4>Select Size</h4>
+
+        <div class="sizes">
+            <span onclick="chooseSize(this)">XS</span>
+            <span onclick="chooseSize(this)">S</span>
+            <span onclick="chooseSize(this)">M</span>
+            <span onclick="chooseSize(this)">L</span>
+            <span onclick="chooseSize(this)">XL</span>
+        </div>
+
+        <button onclick="confirmCart()">OK</button>
+
+    </div>
+</div>
+
+<section class="products" id="product-list">
+
+   <div class="product" data-name="T-Shirt" data-price="15">
+        <img src="images/Women  shirts/1.jpg">
+        <h3>Women T-Shirt</h3>
+        <p>$15</p>
+        <button class="see-more" onclick="showTshirt()">See More</button>
+     <button class="add-cart" onclick="openPopup('T-Shirt',15,'images/Women  shirts/1.jpg')">Add to Cart</button>
+    </div>
+
+    <div class="product" data-name="Heels" data-price="60">
+        <img src="images/High Heels/1.jpg">
+        <h3>High Heels</h3>
+        <p>$60</p>
+        <button class="see-more" onclick="showHeel()">See More</button>
+       <button class="add-cart" onclick="openPopup('Heel',60,'images/High Heels/1.jpg')">Add to Cart</button>
+    </div>
+
+    <div class="product" data-name="Jacket" data-price="40">
+        <img src="images/Jackets/11.jpg">
+        <h3>Jacket</h3>
+        <p>$40</p>
+        <button class="see-more" onclick="showJacket()">See More</button>
+        <button class="add-cart" onclick="openPopup('Jacket',40,'images/Jackets/11.jpg')">Add to Cart</button>
+    </div>
+
+     <div class="product" data-name="Dress" data-price="50">
+        <img src="images/Dress/1.png">
+        <h3>Dress
+        </h3>
+        <p>$40</p>
+        <button class="see-more" onclick="showDress()">See More</button>
+       <button class="add-cart" onclick="openPopup('Dress',50,'images/Dress/1.png')">Add to Cart</button>
+    </div>
+
+     <div class="product" data-name="Purse" data-price="25">
+        <img src="images/Purse/1.jpg">
+        <h3>Purse
+        </h3>
+        <p>$25</p>
+        <button class="see-more" onclick="showPurse()">See More</button>
+       <button class="add-cart" onclick="openPopup('Purse',25,'images/Purse/1.jpg')">Add to Cart</button>
+    </div>
+
+
+</section>
+
+<section id="tshirt-section" class="products" style="display:none;">
+<!--T shirt section-->
+    <div class="product">
+        <img src="images/Women  shirts/1.jpg">
+        <h3>T-Shirt 1</h3>
+        <p>$15</p>
+        <button class="add-cart" onclick="openPopup('T-Shirt',15,'images/Women  shirts/1.jpg')">Add to Cart</button>
+    </div>
+
+    <div class="product">
+        <img src="images/Women  shirts/2.jpg">
+        <h3>T-Shirt 2</h3>
+        <p>$18</p>
+         <button class="add-cart" onclick="openPopup('T-Shirt',18,'images/Women  shirts/2.jpg')">Add to Cart</button>
+    </div>
+     <div class="product">
+        <img src="images/Women  shirts/3.jpg">
+        <h3>T-Shirt 3</h3>
+        <p>$15</p>
+        <button class="add-cart" onclick="openPopup('T-Shirt',15,'images/Women  shirts/3.jpg')">Add to Cart</button>
+    </div>
+
+    <div class="product">
+        <img src="images/Women  shirts/4.jpg">
+        <h3>T-Shirt 4</h3>
+        <p>$18</p>
+         <button class="add-cart" onclick="openPopup('T-Shirt',18,'images/Women  shirts/4.jpg')">Add to Cart</button>
+    </div>
+     <div class="product">
+        <img src="images/Women  shirts/5.jpg">
+        <h3>T-Shirt 5</h3>
+        <p>$18</p>
+         <button class="add-cart" onclick="openPopup('T-Shirt',18,'images/Women  shirts/5.jpg')">Add to Cart</button>
+    </div>
+
+    <div class="product">
+        <img src="images/Women  shirts/6.jpg">
+        <h3>T-Shirt 6</h3>
+        <p>$15</p>
+        <button class="add-cart" onclick="openPopup('T-Shirt',15,'images/Women  shirts/6.jpg')">Add to Cart</button>
+    </div>
+
+    <div class="product">
+        <img src="images/Women  shirts/7.jpg">
+        <h3>T-Shirt 7</h3>
+        <p>$18</p>
+         <button class="add-cart" onclick="openPopup('T-Shirt',18,'images/Women  shirts/7.jpg')">Add to Cart</button>
+    </div>
+     <div class="product">
+        <img src="images/Women  shirts/8.jpg">
+        <h3>T-Shirt 8</h3>
+        <p>$15</p>
+        <button class="add-cart" onclick="openPopup('T-Shirt',15,'images/Women  shirts/8.jpg')">Add to Cart</button>
+    </div>
+
+    <div class="product">
+        <img src="images/Women  shirts/9.jpg">
+        <h3>T-Shirt 9</h3>
+        <p>$18</p>
+         <button class="add-cart" onclick="openPopup('T-Shirt',18,'images/Women  shirts/9.jpg')">Add to Cart</button>
+    </div>
+     <div class="product">
+        <img src="images/Women  shirts/10.jpg">
+        <h3>T-Shirt 10</h3>
+        <p>$18</p>
+         <button class="add-cart" onclick="openPopup('T-Shirt',18,'images/Women  shirts/10.jpg')">Add to Cart</button>
+    </div>
+
+
+
+
+</section>
+<!--Heels-->
+<section id="heel-section" class="products" style="display:none;">
+
+    <div class="product">
+        <img src="images/High Heels/1.jpg">
+        <h3>High Heel 1</h3>
+        <p>$60</p>
+          <button class="add-cart" onclick="openPopup('Heel',60,'images/High Heels/1.jpg')">Add to Cart</button>
+    </div>
+
+    <div class="product">
+        <img src="images/High Heels/2.jpg">
+        <h3>High Heel 2</h3>
+        <p>$50</p>
+          <button class="add-cart" onclick="openPopup('Heel',50,'images/High Heels/2.jpg')">Add to Cart</button>
+    </div>
+    
+    <div class="product">
+        <img src="images/High Heels/3.jpg">
+        <h3>High Heel 3</h3>
+        <p>$60</p>
+          <button class="add-cart" onclick="openPopup('Heel',60,'images/High Heels/3.jpg')">Add to Cart</button>
+    </div>
+
+    <div class="product">
+        <img src="images/High Heels/4.jpg">
+        <h3>High Heel 4</h3>
+        <p>$50</p>
+          <button class="add-cart" onclick="openPopup('Heel',50,'images/High Heels/4.jpg')">Add to Cart</button>
+    </div>
+     <div class="product">
+        <img src="images/High Heels/5.jpg">
+        <h3>High Heel 5</h3>
+        <p>$50</p>
+          <button class="add-cart" onclick="openPopup('Heel',50,'images/High Heels/5.jpg')">Add to Cart</button>
+    </div>
+
+    <div class="product">
+        <img src="images/High Heels/6.jpg">
+        <h3>High Heel 6</h3>
+        <p>$60</p>
+          <button class="add-cart" onclick="openPopup('Heel',60,'images/High Heels/6.jpg')">Add to Cart</button>
+    </div>
+
+    <div class="product">
+        <img src="images/High Heels/7.jpg">
+        <h3>High Heel 7</h3>
+        <p>$50</p>
+          <button class="add-cart" onclick="openPopup('Heel',50,'images/High Heels/7.jpg')">Add to Cart</button>
+    </div>
+    
+    <div class="product">
+        <img src="images/High Heels/8.jpg">
+        <h3>High Heel 8</h3>
+        <p>$60</p>
+          <button class="add-cart" onclick="openPopup('Heel',60,'images/High Heels/8.jpg')">Add to Cart</button>
+    </div>
+
+    <div class="product">
+        <img src="images/High Heels/9.jpg">
+        <h3>High Heel 9</h3>
+        <p>$50</p>
+          <button class="add-cart" onclick="openPopup('Heel',50,'images/High Heels/9.jpg')">Add to Cart</button>
+    </div>
+    
+    <div class="product">
+        <img src="images/High Heels/10.jpg">
+        <h3>High Heel 10</h3>
+        <p>$50</p>
+          <button class="add-cart" onclick="openPopup('Heel',50,'images/High Heels/10.jpg')">Add to Cart</button>
+    </div>
+
+
+</section>
+
+<!--Jacket-->
+<section id="jacket-section" class="products" style="display:none;">
+
+    <div class="product">
+        <img src="images/Jackets/11.jpg">
+        <h3>Jacket 1</h3>
+        <p>$15</p>
+        <button class="add-cart" onclick="openPopup('Jakcet',15,'images/Jackets/11.jpg')">Add to Cart</button>
+    </div>
+
+    <div class="product">
+        <img src="images/Jackets/12.jpg">
+        <h3>Jacket 2</h3>
+        <p>$18</p>
+       <button class="add-cart" onclick="openPopup('Jacket',18,'images/Jackets/12.jpg')">Add to Cart</button>
+    </div>
+     <div class="product">
+        <img src="images/Jackets/13.jpg">
+        <h3>Jacket 3</h3>
+        <p>$15</p>
+        <button class="add-cart" onclick="openPopup('Jakcet',15,'images/Jackets/13.jpg')">Add to Cart</button>
+    </div>
+
+    <div class="product">
+        <img src="images/Jackets/14.jpg">
+        <h3>Jacket 4</h3>
+        <p>$18</p>
+       <button class="add-cart" onclick="openPopup('Jacket',18,'images/Jackets/14.jpg')">Add to Cart</button>
+    </div>
+    <div class="product">
+        <img src="images/Jackets/15.jpg">
+        <h3>Jacket 5</h3>
+        <p>$18</p>
+       <button class="add-cart" onclick="openPopup('Jacket',18,'images/Jackets/15.jpg')">Add to Cart</button>
+    </div>
+
+    <div class="product">
+        <img src="images/Jackets/16.jpg">
+        <h3>Jacket 6</h3>
+        <p>$15</p>
+        <button class="add-cart" onclick="openPopup('Jakcet',15,'images/Jackets/16.jpg')">Add to Cart</button>
+    </div>
+
+    <div class="product">
+        <img src="images/Jackets/17.jpg">
+        <h3>Jacket 7</h3>
+        <p>$18</p>
+       <button class="add-cart" onclick="openPopup('Jacket',18,'images/Jackets/17.jpg')">Add to Cart</button>
+    </div>
+     <div class="product">
+        <img src="images/Jackets/18.jpg">
+        <h3>Jacket 8</h3>
+        <p>$15</p>
+        <button class="add-cart" onclick="openPopup('Jakcet',15,'images/Jackets/18.jpg')">Add to Cart</button>
+    </div>
+
+    <div class="product">
+        <img src="images/Jackets/19.jpg">
+        <h3>Jacket 9</h3>
+        <p>$18</p>
+       <button class="add-cart" onclick="openPopup('Jacket',18,'images/Jackets/19.jpg')">Add to Cart</button>
+    </div>
+    <div class="product">
+        <img src="images/Jackets/20.jpg">
+        <h3>Jacket 10</h3>
+        <p>$18</p>
+       <button class="add-cart" onclick="openPopup('Jacket',18,'images/Jackets/20.jpg')">Add to Cart</button>
+    </div>
+
+
+</section>
+<!--Dress-->
+<section id="dress-section" class="products" style="display:none;">
+
+    <div class="product">
+        <img src="images/Dress/1.png">
+        <h3>Dress 1</h3>
+        <p>$80</p>
+        <button class="add-cart" onclick="openPopup('Dress',80,'images/Dress/1.png')">Add to Cart</button>
+    </div>
+ 
+    <div class="product">
+        <img src="images/Dress/2.jpg">
+        <h3>Dress 2</h3>
+        <p>$60</p>
+        <button class="add-cart" onclick="openPopup('Dress',60,'iimages/Dress/2.jpg')">Add to Cart</button>
+    </div>
+       <div class="product">
+        <img src="images/Dress/3.jpg">
+        <h3>Dress 3</h3>
+        <p>$80</p>
+        <button class="add-cart" onclick="openPopup('Dress',80,'images/Dress/3.jpg')">Add to Cart</button>
+    </div>
+ 
+    <div class="product">
+        <img src="images/Dress/4.jpg">
+        <h3>Dress 4</h3>
+        <p>$60</p>
+        <button class="add-cart" onclick="openPopup('Dress',60,'images/Dress/4.jpg')">Add to Cart</button>
+    </div>
+      <div class="product">
+        <img src="images/Dress/5.jpg">
+        <h3>Dress 5</h3>
+        <p>$60</p>
+        <button class="add-cart" onclick="openPopup('Dress',60,'images/Dress/5.jpg')">Add to Cart</button>
+    </div>
+
+    <div class="product">
+        <img src="images/Dress/6.jpg">
+        <h3>Dress 6</h3>
+        <p>$80</p>
+        <button class="add-cart" onclick="openPopup('Dress',80,'images/Dress/6.jpg')">Add to Cart</button>
+    </div>
+ 
+    <div class="product">
+        <img src="images/Dress/7.jpg">
+        <h3>Dress 7</h3>
+        <p>$60</p>
+        <button class="add-cart" onclick="openPopup('Dress',60,'iimages/Dress/7.jpg')">Add to Cart</button>
+    </div>
+       <div class="product">
+        <img src="images/Dress/8.jpg">
+        <h3>Dress 8</h3>
+        <p>$80</p>
+        <button class="add-cart" onclick="openPopup('Dress',80,'images/Dress/8.jpg')">Add to Cart</button>
+    </div>
+ 
+    <div class="product">
+        <img src="images/Dress/9.jpg">
+        <h3>Dress 9</h3>
+        <p>$60</p>
+        <button class="add-cart" onclick="openPopup('Dress',60,'images/Dress/9.jpg')">Add to Cart</button>
+    </div>
+      <div class="product">
+        <img src="images/Dress/10.jpg">
+        <h3>Dress 10</h3>
+        <p>$60</p>
+        <button class="add-cart" onclick="openPopup('Dress',60,'images/Dress/10.jpg')">Add to Cart</button>
+    </div>
+
+
+</section>
+<!--Purse-->
+<section id="purse-section" class="products" style="display:none;">
+  <div class="product">
+        <img src="images/Purse/1.jpg">
+        <h3>Purse 1</h3>
+        <p>$15</p>
+         <button class="add-cart" onclick="openPopup('Purse',15,'images/Purse/1.jpg')">Add to Cart</button>
+    </div>
+ 
+    <div class="product">
+        <img src="images/Purse/2.jpg">
+        <h3>Purse 2</h3>
+        <p>$18</p>
+         <button class="add-cart" onclick="openPopup('Purse',18,'images/Purse/2.jpg')">Add to Cart</button>
+    </div>
+     <div class="product">
+        <img src="images/Purse/3.jpg">
+        <h3>Purse 3</h3>
+        <p>$15</p>
+         <button class="add-cart" onclick="openPopup('Purse',15,'images/Purse/3.jpg')">Add to Cart</button>
+    </div>
+ 
+    <div class="product">
+        <img src="images/Purse/4.jpg">
+        <h3>Purse 4</h3>
+        <p>$18</p>
+         <button class="add-cart" onclick="openPopup('Purse',18,'images/Purse/4.jpg')">Add to Cart</button>
+    </div>
+     <div class="product">
+        <img src="images/Purse/5.jpg">
+        <h3>Purse 5</h3>
+        <p>$18</p>
+         <button class="add-cart" onclick="openPopup('Purse',18,'images/Purse/5.jpg')">Add to Cart</button>
+    </div>
+
+     <div class="product">
+        <img src="images/Purse/6.jpg">
+        <h3>Purse 6</h3>
+        <p>$15</p>
+         <button class="add-cart" onclick="openPopup('Purse',15,'images/Purse/6.jpg')">Add to Cart</button>
+    </div>
+ 
+    <div class="product">
+        <img src="images/Purse/7.jpg">
+        <h3>Purse 7</h3>
+        <p>$18</p>
+         <button class="add-cart" onclick="openPopup('Purse',18,'images/Purse/7.jpg')">Add to Cart</button>
+    </div>
+     <div class="product">
+        <img src="images/Purse/8.jpg">
+        <h3>Purse 8</h3>
+        <p>$15</p>
+         <button class="add-cart" onclick="openPopup('Purse',15,'images/Purse/8.jpg')">Add to Cart</button>
+    </div>
+ 
+    <div class="product">
+        <img src="images/Purse/9.jpg">
+        <h3>Purse 9</h3>
+        <p>$18</p>
+         <button class="add-cart" onclick="openPopup('Purse',18,'images/Purse/9.jpg')">Add to Cart</button>
+    </div>
+     <div class="product">
+        <img src="images/Purse/10.jpg">
+        <h3>Purse 10</h3>
+        <p>$18</p>
+         <button class="add-cart" onclick="openPopup('Purse',18,'images/Purse/10.jpg')">Add to Cart</button>
+    </div>
+    </section>
+
+
+
+
+<!--Back Button-->
+
+<div id="back-box" style="display:none; text-align:center; margin-bottom:20px;">
+   <button class="back-btn" onclick="goBack()">⬅ Back</button>
+</div>
+
+
+<section class="cart">
+    <h2>Shopping Cart</h2>
+    <ul id="cart-items"></ul>
+    <h3>Total: $<span id="total">0</span></h3>
+
+     <div class="bottom-cart-box">
+        <a href="cart.html" class="bottom-cart-btn">
+            🛒 View Full Cart
+        </a>
+    </div>
+</section>
+
+<script src="script.js"></script>
+
+
+<!--Footer-->
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <!-- Brand -->
+        <div class="footer-section">
+            <h2>Velora</h2>
+            <p>Style that defines you. Shop the latest fashion trends.</p>
+        </div>
+
+        <!-- Links -->
+        <div class="footer-section">
+            <h3>Shop</h3>
+            <a href="index.html">Home</a>
+            <a href="kid.html">Kid's</a>
+            <a href="women's.html">Women's</a>
+            <a href="men's.html">Men's</a>
+        </div>
+
+        <!-- Help -->
+        <div class="footer-section">
+            <h3>Help</h3>
+            <a href="#">Contact</a>
+            <a href="#">Shipping</a>
+            <a href="#">Returns</a>
+        </div>
+
+        <!-- Social -->
+        <div class="footer-section">
+            <h3>Follow Us</h3>
+            <p>Facebook | Instagram | TikTok</p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 Velora Shop. All rights reserved.</p>
+    </div>
+
+</footer>
+</body>
+</html>
